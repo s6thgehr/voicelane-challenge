@@ -1,3 +1,5 @@
+import React from "react";
+
 const SearchResults = ({ results }) => {
   return (
     <table className="border-collapse border border-slate-500 mt-8">

@@ -13,9 +13,6 @@ const SearchBar = ({ onSearch }) => {
     const searchResult = await search(orama, {
       term: query,
       properties: "*",
-      boost: {
-        author: 1.5, // optional: boost author field by x1.5
-      },
     });
     setHistory((prevHistory) => {
       if (prevHistory.includes(query) || query.length === 0) {
