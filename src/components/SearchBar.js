@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { search } from "@orama/orama";
 import orama from "../db/orama";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleSubmit = async (event) => {
@@ -14,7 +14,7 @@ const SearchBar = () => {
         author: 1.5, // optional: boost author field by x1.5
       },
     });
-    console.log(searchResult);
+    onSearch(searchResult.hits);
   };
   return (
     <form className="my-8">
