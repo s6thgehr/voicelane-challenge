@@ -1,6 +1,6 @@
 const SearchResults = ({ results }) => {
   return (
-    <table className="border-collapse border border-slate-500">
+    <table className="border-collapse border border-slate-500 mt-8">
       <thead>
         <tr>
           <th className="border border-slate-600 py-2 px-4">Image</th>
