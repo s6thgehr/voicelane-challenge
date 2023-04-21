@@ -28,23 +28,30 @@ const InputWithSearchHistory = ({
       />
       {match.length > 0 && (
         <div className="absolute top-10 min-w-[16rem] bg-slate-200 border border-slate-600 rounded-b-md">
-          {match.map((query) => (
-            <div key={query} className="p-2 flex justify-between items-center">
-              <div>{query}</div>
+          {match.map((q) => (
+            <div key={q} className="p-2 flex justify-between items-center">
+              <div
+                className="hover:cursor-pointer"
+                onClick={() => {
+                  setQuery(q);
+                }}
+              >
+                {q}
+              </div>
               <div
                 onClick={() => {
                   setHistory(
                     history.filter((hist) => {
-                      return hist !== query;
+                      return hist !== q;
                     })
                   );
                   setMatch(
                     match.filter((m) => {
-                      return m !== query;
+                      return m !== q;
                     })
                   );
                 }}
-                className="text-sm hover:bg-slate-400 px-2 py-1 rounded-md"
+                className="text-sm hover:bg-slate-400 hover:cursor-pointer px-2 py-1 rounded-md"
               >
                 Delete
               </div>
